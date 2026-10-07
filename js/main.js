@@ -364,63 +364,8 @@ END:VCALENDAR`.trim();
         }
 
         if (shapesContainer) {
-            // Create 10 shapes
-            const shapes = [
-                { type: 'circle', color: '#4285F4', size: '40' },
-                { type: 'circle', color: '#EA4335', size: '30' },
-                { type: 'circle', color: '#FBBC04', size: '35' },
-                { type: 'square', color: '#4285F4', size: '35' },
-                { type: 'square', color: '#EA4335', size: '25' },
-                { type: 'square', color: '#34A853', size: '30' },
-                { type: 'triangle', color: '#4285F4', size: '30' },
-                { type: 'triangle', color: '#EA4335', size: '35' },
-                { type: 'brace', color: '#4285F4', size: '40' }, // we'll use an SVG path for brace
-                { type: 'git', color: '#EA4335', size: '40' }   // we'll use an SVG path for git branch
-            ];
-
-            shapes.forEach((shape, index) => {
-                let shapeElement;
-                if (shape.type === 'circle' || shape.type === 'square') {
-                    shapeElement = document.createElement('div');
-                    shapeElement.className = `hero__shape hero__shape--${shape.type}`;
-                    shapeElement.style.width = `${shape.size}px`;
-                    shapeElement.style.height = `${shape.size}px`;
-                    shapeElement.style.backgroundColor = shape.color;
-                    if (shape.type === 'circle') {
-                        shapeElement.style.borderRadius = '50%';
-                    }
-                    // For square, we don't need to set borderRadius (it's 0 by default, but we want it square so no radius)
-                } else if (shape.type === 'triangle') {
-                    shapeElement = document.createElement('div');
-                    shapeElement.className = 'hero__shape hero__shape--triangle';
-                    // We'll use CSS to create a triangle
-                    shapeElement.style.width = '0';
-                    shapeElement.style.height = '0';
-                    shapeElement.style.borderLeft = `${shape.size/2}px solid transparent`;
-                    shapeElement.style.borderRight = `${shape.size/2}px solid transparent`;
-                    shapeElement.style.borderBottom = `${shape.size}px solid ${shape.color}`;
-                } else if (shape.type === 'brace' || shape.type === 'git') {
-                    // We'll use an SVG for these
-                    shapeElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                    shapeElement.setAttribute('width', shape.size);
-                    shapeElement.setAttribute('height', shape.size);
-                    shapeElement.className = `hero__shape hero__shape--${shape.type}`;
-                    if (shape.type === 'brace') {
-                        shapeElement.innerHTML = `<path d="M10 20 C10 10, 25 10, 25 20 C25 30, 10 30, 10 20 Z" fill="${shape.color}"/>`;
-                    } else if (shape.type === 'git') {
-                        shapeElement.innerHTML = `<path d="M20 10 L10 20 L20 30" stroke="${shape.color}" stroke-width="3" fill="none"/>`;
-                    }
-                }
-
-                // Set position randomly within the container
-                shapeElement.style.position = 'absolute';
-                shapeElement.style.left = `${Math.random() * 100}%`;
-                shapeElement.style.top = `${Math.random() * 100}%`;
-                shapeElement.style.animation = `float ${Math.random() * 5 + 5}s ease-in-out infinite`;
-                shapeElement.style.animationDelay = `${Math.random() * 2}s`;
-
-                shapesContainer.appendChild(shapeElement);
-            });
+            // Floating shapes removed per request
+            // Keep container for future use if needed
         }
     };
 
