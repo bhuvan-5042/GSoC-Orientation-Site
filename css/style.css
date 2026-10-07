@@ -1383,7 +1383,49 @@ footer {
     .join__text {
         order: 1;
     }
-}
+  }
+  
+  @media (max-width: 480px) {
+    .hero__title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+    
+    .hero__tagline {
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+    }
+    
+    .hero__cta {
+        flex-direction: column;
+    }
+    
+    .hero__cta .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .navbar__logo {
+        font-size: 1.1rem;
+    }
+    
+    .navbar__links {
+        display: none;
+    }
+    
+    .hero__terminal {
+        width: 95%;
+        max-height: 150px;
+    }
+    
+    /* Reduce top padding on hero content for very small screens */
+    .hero__content {
+        padding-top: 3rem;
+    }
+    
+    /* Reduce gap between hero chips on smallest screens */
+    .hero__meta {
+        gap: 1rem;
+    }
+  }
 
 @media (max-width: 480px) {
     .hero__title {
@@ -1414,5 +1456,10 @@ footer {
     .hero__terminal {
         width: 95%;
         max-height: 150px;
+    }
+    
+    /* Reduce top padding on hero content for very small screens */
+    .hero__content {
+        padding-top: 3rem;
     }
 }
