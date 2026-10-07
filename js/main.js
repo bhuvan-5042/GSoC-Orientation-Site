@@ -163,6 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
         };
 
+        // Helper to format date for IST (UTC+5:30) in basic format YYYYMMDDTHHMMSS
+        const formatISTDate = (date) => {
+            const offsetMinutes = 5 * 60 + 30; // IST offset in minutes
+            const istDate = new Date(date.getTime() + offsetMinutes * 60000);
+            return istDate.toISOString().replace(/[-:]/g, '').split('.')[0];
+        };
+
         addToCalendarBtn.addEventListener('click', (e) => {
             // Generate and download .ics file
             const icsContent = `
@@ -170,8 +177,8 @@ BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
 URL;VALUE=URI:${window.location.href}
-DTSTART:${EVENT_DATE.toISOString().replace(/[-:]/g, '').split('.')[0]}
-DTEND:${new Date(EVENT_DATE.getTime() + 110*60000).toISOString().replace(/[-:]/g, '').split('.')[0]}
+DTSTART:${formatISTDate(EVENT_DATE)}
+DTEND:${formatISTDate(new Date(EVENT_DATE.getTime() + 110*60000))}
 SUMMARY:${CONFIG.event.title}
 DESCRIPTION:${CONFIG.event.whatToExpect}
 LOCATION:${CONFIG.event.venue}
