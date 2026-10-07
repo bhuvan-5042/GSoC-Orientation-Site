@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSoC Orientation Event - Geethanjali College</title>
+    <meta name="description" content="Google Summer of Code Orientation Event at Geethanjali College of Engineering and Technology. Learn about open-source, proposal writing, and contribute to real-world projects.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="GSoC Orientation Event - Geethanjali College">
+    <meta property="og:description" content="Google Summer of Code Orientation Event at Geethanjali College of Engineering and Technology. Learn about open-source, proposal writing, and contribute to real-world projects.">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:url" content="https://example.com/gsoc-orientation">
+    <meta property="og:type" content="website">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar-container">
+            <nav class="navbar">
+                <div class="navbar__logo">
+                    <div class="logo-sun">
+                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 2v2M10 16v2M3.41 3.41l1.42 1.42M15.17 15.17l1.42 1.42M2 10h2M18 10h2M3.41 16.59l1.42-1.42M15.17 4.83l1.42 1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span>GSoC</span> Orientation
+                    </div>
+                </div>
+                <ul class="navbar__links">
+                    <!-- Links will be injected by JS -->
+                </ul>
+                <div class="navbar__actions">
+                    <button id="dark-mode-toggle" class="btn btn--icon" aria-label="Toggle dark mode">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.42 1.42M2 12h2M20 12h2M6.34 17.66l-1.42 1.42M17.66 6.34l-1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <a href="#join" class="btn btn--primary">Get Updates</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__background">
+                <!-- Animated sun/sunrise SVG -->
+                <svg class="hero__sun" width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#FF9800"/>
+                            <stop offset="100%" stop-color="#FBBC05"/>
+                        </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="80" fill="url(#sunGradient)"/>
+                    <!-- Rotating rays -->
+                    <g class="hero__rays">
+                        <!-- We'll duplicate lines with different rotations -->
+                    </g>
+                    <!-- Floating geometric shapes -->
+                    <g class="hero__shapes">
+                        <!-- Shapes will be injected by JS or we can hardcode a few -->
+                    </g>
+                </svg>
+                <!-- Glassmorphism terminal -->
+                <div class="hero__terminal">
+                    <div class="hero__terminal-header">
+                        <div class="hero__terminal-dot"></div>
+                        <div class="hero__terminal-dot"></div>
+                        <div class="hero__terminal-dot"></div>
+                        <span>terminal</span>
+                    </div>
+                    <div class="hero__terminal-body" id="terminal-body">
+                        <div class="hero__terminal-line">$ git clone open-source-world</div>
+                        <div class="hero__terminal-line">$ git checkout -b my-gsoc-proposal</div>
+                        <div class="hero__terminal-line">$ git commit -m "Applied to GSoC 2027"</div>
+                        <div class="hero__terminal-line">$ git push origin dream</div>
+                        <div class="hero__terminal-line cursor">_</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__title-highlight">GSoC</span> Orientation
+                </h1>
+                <p class="hero__tagline">Code. Contribute. Create. Your open-source journey starts here.</p>
+                <div class="hero__meta">
+                    <div class="hero__chip">
+                        <span class="hero__chip-label">Date</span>
+                        <span class="hero__chip-value" id="hero-date">09-10-2026</span>
+                    </div>
+                    <div class="hero__chip">
+                        <span class="hero__chip-label">Time</span>
+                        <span class="hero__chip-value" id="hero-time">1:30 P.M. to 3:20 P.M. IST</span>
+                    </div>
+                    <div class="hero__chip">
+                        <span class="hero__chip-label">Venue</span>
+                        <span class="hero__chip-value" id="hero-venue" class="venue-tba">TBA</span>
+                    </div>
+                </div>
+                <div class="hero__cta">
+                    <button id="add-to-calendar" class="btn btn--secondary">Add to Calendar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about" data-scroll-reveal>
+            <div class="section__container">
+                <h2 class="section__title">About the Event</h2>
+                 <p class="section__text">
+                     This orientation event introduces students to Google Summer of Code, a global program that offers stipends to contributors who successfully complete open-source projects. Learn how to get started, write a winning proposal, and connect with mentors from around the world.
+                 </p>
+            </div>
+        </section>
+
+        <!-- Why GSoC Section -->
+        <section class="section" id="why" data-scroll-reveal>
+            <div class="section__container">
+                <h2 class="section__title">Why GSoC?</h2>
+                <div class="cards-grid" id="why-cards">
+                    <!-- Cards will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- GSoC Journey Section -->
+        <section class="section" id="journey" data-scroll-reveal>
+            <div class="section__container">
+                <h2 class="section__title">Your GSoC Journey</h2>
+                <div class="timeline" id="journey-timeline">
+                    <!-- Timeline steps will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Agenda Section -->
+        <section class="section" id="agenda" data-scroll-reveal>
+            <div class="section__container">
+        <h2 class="section__title">Event Agenda <span class="agenda__tentative">(Tentative)</span></h2>
+        <div class="timeline" id="agenda-timeline">
+            <!-- Agenda items will be injected by JS -->
+        </div>
+            </div>
+        </section>
+
+
+
+        <!-- Open-Source Tools Marquee -->
+        <section class="section tools-marquee">
+            <div class="marquee">
+                <div class="marquee__track" id="marquee-track">
+                    <!-- Tools will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details Section -->
+        <section class="section" id="details" data-scroll-reveal>
+            <div class="section__container">
+                <h2 class="section__title">Event Details</h2>
+                <div class="details-card">
+                    <div class="details__item">
+                        <span class="details__label">Date</span>
+                        <span class="details__value" id="details-date">09-10-2026</span>
+                    </div>
+                    <div class="details__item">
+                        <span class="details__label">Time</span>
+                        <span class="details__value" id="details-time">1:30 P.M. to 3:20 P.M. IST</span>
+                    </div>
+                    <div class="details__item">
+                        <span class="details__label">Venue</span>
+                        <span class="details__value" id="details-venue" class="venue-tba">TBA</span>
+                    </div>
+                    <div class="details__item">
+                        <span class="details__label">Audience</span>
+                        <span class="details__value" id="details-audience">All students and faculty members</span>
+                    </div>
+                    <div class="details__action">
+                        <button id="add-to-calendar-details" class="btn btn--secondary">Add to Calendar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer__container">
+            <div class="footer__content">
+                <p class="footer__college">Geethanjali College of Engineering and Technology</p>
+                <p class="footer__copyright">© 2026 Geethanjali College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Confetti Container (will be inserted by JS) -->
+    <!-- Scripts -->
+    <script src="js/config.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
