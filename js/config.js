@@ -6,7 +6,7 @@ const CONFIG = {
         host: "Geethanjali College of Engineering and Technology",
         date: "09-10-2026", // DD-MM-YYYY
         time: "1:30 P.M. to 3:20 P.M. IST",
-        venue: "Block 1 Seminar Hall", // Editable; if set, show the venue, else show a TBA badge
+        venue: "Block 5 Seminar Hall", // Editable; if set, show the venue, else show a TBA badge
         audience: "All students and faculty members",
         whatToExpect: "Experienced speakers and past GSoC contributors sharing valuable insights, proposal-writing strategies, and open-source guidance for the college community.",
         callToAction: "All students are encouraged to attend and participate. For further updates, scan the QR code. All departments are requested to extend their cooperation and support for the smooth conduct of the event."
@@ -132,7 +132,7 @@ const CONFIG = {
         // These will be pulled from event object but we can duplicate for clarity
         date: "09-10-2026",
         time: "1:30 P.M. to 3:20 P.M. IST",
-        venue: "Block 1 Seminar Hall",
+        venue: "Block 5 Seminar Hall",
         audience: "All students and faculty members"
     },
     // Footer
